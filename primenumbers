@@ -1,0 +1,35 @@
+//create package
+package dayseven;
+import java.util.Scanner;
+//create class
+public class Primenumbers {
+	
+	 public static void main(String[] args)
+	 {
+	  int n,p;
+	//taking input value through Scanner class
+
+      java.util.Scanner scanner = new java.util.Scanner(System.in);
+      //prompt the user for taking input value
+
+      System.out.print("Enter a number ");
+      //read the input value and store it on n variable
+
+       n = scanner.nextInt();
+      //prompt the user for print numbers from 1 to 600
+	  //using for loop to read values  upto  600
+
+	  for(int i=2;i<n;i++)
+	  {
+	   p=0;
+	   for(int j=2;j<i;j++)
+	   {
+	    if(i%j==0)
+	    p=1;
+	   }
+	   if(p==0)
+		   System.out.print(" "+i);
+	  }
+	 }
+	}
+
