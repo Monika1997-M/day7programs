@@ -1,0 +1,57 @@
+//create package
+package day11;
+import java.util.Scanner;
+import java.util.*;
+//create class salesman
+public class SalesMan
+   {
+	//create string id,name and Degree as public
+    public String Id;
+    public String Name;
+    public String Degree;
+    public static String d;
+    
+    SalesMan(String id, String name, String degree){
+        Id=id;
+        Name=name;
+        Degree=degree;
+        
+    }
+    //main method
+    public static void main(String[] args){
+        SalesMan s1=new SalesMan("M10001", "PAVAN KUMAR","B.tech");
+        SalesMan s2=new SalesMan("M10645", "RAVI","POST GRADUATE");
+        SalesMan s3=new SalesMan("M10258","RAVI", "MBA");
+        SalesMan s4=new SalesMan("M10698","NARESH", "Btech");
+        SalesMan s5=new SalesMan("M10653","VAMSI", "Btech");
+        List <SalesMan> a=new ArrayList<SalesMan>();
+        a.add(s1);
+        a.add(s2);
+        a.add(s3);
+        a.add(s4);
+        a.add(s5);
+        
+        for(SalesMan s:a)
+        {
+            System.out.println(s.Id+" "+s.Name+" "+s.Degree);
+        }
+        System.out.println("enter required 'id' who are selected to this job:(Here M is same for all id's and remaining  part you will enter below)");
+        //use scanner class to take the input from the key board
+        Scanner sc=new Scanner(System.in);
+        String k="MXXXXX";
+        System.out.print(k.substring(0,1));
+        String c=k.substring(1,6);
+        c=sc.nextLine();
+         
+        System.out.println(c);
+        for(SalesMan s:a){
+             if(s.Id.substring(1,6).trim().equals(c)){
+                
+           System.out.println("Required id details are:\n "+ s.Id+" "+s.Name+" "+s.Degree+"\n you are selected for this post salesman ");
+        }//end if
+        
+        }//end for-each
+        
+        
+    }//end main
+}//end class
